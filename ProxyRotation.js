@@ -15,11 +15,11 @@ const $ = cheerio.load(html.data);
     $("td:nth-child(2)").each(function(index, value) {
       port_numbers[index] = $(this).text();
     });
-    
+
   ip_addresses.join(", ");
   port_numbers.join(", ");
   let random_number = Math.floor(Math.random() * 100);
-    return `http://${ip_addresses[random_number]}:${port_numbers[random_number]}`
+    return [ip_addresses[random_number],port_numbers[random_number]]
 
   } catch(error)
   {
